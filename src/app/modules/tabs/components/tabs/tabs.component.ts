@@ -11,10 +11,10 @@ import { TabComponent } from '../tab/tab.component';
 @Component({
   selector: 'app-tabs',
   template: `
-    <div class="tabs__titles" (click)="selectTab()">
+    <div class="tabs__titles">
       <div *ngFor="let tab of tabs"
         class="tabs__title"
-        [ngClass]="isActiveClass(tab)"
+        [ngClass]="isActiveTab(tab)"
         (click)="selectTab(tab)">
         <ng-container [ngTemplateOutlet]="tab.titleTemplate"></ng-container>
       </div>
@@ -60,7 +60,7 @@ export class TabsComponent implements AfterContentInit {
     this.tabContent.createEmbeddedView(tab.contentTemplate);
   }
 
-  isActiveClass(tab: TabComponent) {
+  isActiveTab(tab: TabComponent) {
     if (tab.active) {
       return 'tabs__title--active';
     }

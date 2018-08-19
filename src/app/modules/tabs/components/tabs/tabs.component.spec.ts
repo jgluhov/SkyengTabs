@@ -34,12 +34,12 @@ describe('TabsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('#isActiveClass()', () => {
+  describe('#isActiveTab()', () => {
     describe('when tab is active', () => {
       it('should return active class', () => {
         tabComponent.active = true;
 
-        expect(component.isActiveClass(tabComponent)).toMatch(/active/i);
+        expect(component.isActiveTab(tabComponent)).toMatch(/active/i);
       });
     });
 
@@ -47,7 +47,7 @@ describe('TabsComponent', () => {
       it('should return nothing', () => {
         tabComponent.active = false;
 
-        expect(component.isActiveClass(tabComponent)).toBeUndefined();
+        expect(component.isActiveTab(tabComponent)).toBeUndefined();
       });
     });
   });
