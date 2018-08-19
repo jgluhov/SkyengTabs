@@ -22,4 +22,8 @@ describe('TabComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be set active to false', () => {
+    expect(component.active).toBe(false);
+  });
 });
