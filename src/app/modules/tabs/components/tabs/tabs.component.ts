@@ -18,10 +18,16 @@ export class TabsComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   ngOnInit() {
-    console.log('here');
+
   }
 
   ngAfterContentInit() {
+    this.resetTabs(this.tabs);
+
+    this.tabs.changes.subscribe(this.resetTabs);
+  }
+
+  resetTabs = (tabs: QueryList<TabComponent>) => {
     const activeTab = this.tabs.some((tab: TabComponent) => tab.active);
 
     if (!activeTab) {

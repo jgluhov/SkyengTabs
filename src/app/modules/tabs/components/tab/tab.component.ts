@@ -14,5 +14,6 @@ import { Component, ViewChild } from '@angular/core';
 export class TabComponent {
   @ViewChild('titleTemplate') titleTemplate;
   @ViewChild('contentTemplate') contentTemplate;
-  public active = false;
+
+  active = false;
 }
